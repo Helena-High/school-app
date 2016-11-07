@@ -13,6 +13,8 @@ import {
 } from '@exponent/ex-navigation';
 import {
   FontAwesome,
+  Entypo,
+  MaterialIcons,
 } from '@exponent/vector-icons';
 
 import Alerts from '../constants/Alerts';
@@ -36,26 +38,32 @@ export default class RootNavigation extends React.Component {
         initialTab="home">
         <TabNavigationItem
           id="home"
-          renderIcon={isSelected => this._renderIcon('home', isSelected)}>
+          renderIcon={isSelected => this._renderFontAwesomeIcon('home', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('home')} />
         </TabNavigationItem>
-
-        <TabNavigationItem
-          id="links"
-          renderIcon={isSelected => this._renderIcon('book', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('links')} />
+		
+		<TabNavigationItem
+          id="powerschool"
+          renderIcon={isSelected => this._renderMaterialIconsIcon('spellcheck', isSelected)}>
+          <StackNavigation initialRoute={Router.getRoute('powerschool')} />
         </TabNavigationItem>
 
         <TabNavigationItem
-          id="settings"
-          renderIcon={isSelected => this._renderIcon('cog', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('settings')} />
-        </TabNavigationItem>
+          id="info"
+          renderIcon={isSelected => this._renderEntypoIcon('info-with-circle', isSelected)}>
+          <StackNavigation initialRoute={Router.getRoute('info')} />
+        </TabNavigationItem> 
+
+        <TabNavigationItem
+          id="athletics"
+          renderIcon={isSelected => this._renderFontAwesomeIcon('paw', isSelected)}>
+          <StackNavigation initialRoute={Router.getRoute('athletics')} />
+        </TabNavigationItem>     		
       </TabNavigation>
     );
   }
 
-  _renderIcon(name, isSelected) {
+  _renderFontAwesomeIcon(name, isSelected) {
     return (
       <FontAwesome
         name={name}
@@ -64,6 +72,27 @@ export default class RootNavigation extends React.Component {
       />
     );
   }
+  
+   _renderEntypoIcon(name, isSelected) {
+    return (
+      <Entypo
+        name={name}
+        size={32}
+        color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
+      />
+    );
+  }
+  
+    _renderMaterialIconsIcon(name, isSelected) {
+    return (
+      <MaterialIcons
+        name={name}
+        size={32}
+        color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
+      />
+    );
+  }
+
 
   _registerForPushNotifications() {
     const { notification } = this.props;
@@ -72,7 +101,7 @@ export default class RootNavigation extends React.Component {
     // You can comment the following line out if you want to stop receiving
     // a notification every time you open the app. Check out the source
     // for this function in api/registerForPushNotificationsAsync.js
-    registerForPushNotificationsAsync();
+    //registerForPushNotificationsAsync();
 
     // If we started the app from a push notification, handle it right away
     notification && this._handleNotification(notification);

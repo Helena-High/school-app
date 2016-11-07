@@ -15,149 +15,109 @@ import { MonoText } from '../components/StyledText';
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
-      visible: true,
-    },
+	  title: '       Be Responsible    Be Involved',
+	  backgroundColor: '#990033',
+	  titleStyle: {fontSize: 17, color: '#dddddd', textAlign: 'left', fontWeight: '600'},
+    }
   }
 
   render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
-
+    return (   
+		<View style={styles.mainContainer}>   	
           <View style={styles.welcomeContainer}>
             <Image
-              source={require('../assets/images/exponent-wordmark.png')}
+              source={require('../assets/images/HHS.png')}
               style={styles.welcomeImage}
             />
           </View>
-
-
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-
-            <Text style={styles.getStartedText}>
-              Hello Sage, Chrissy, Willie, Kevin & Steve.
+		  
+          <View style={styles.hhsInfoContainer}>
+			<Text>
+              <MonoText style={styles.infoText}>Helena High School</MonoText>
             </Text>
-
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>This is highlighted text.</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-               <MonoText style={styles.codeHighlightText}>PowerSchool Links</MonoText>
+			<Text>
+              <MonoText style={styles.infoText}>1300 Billings Ave.</MonoText>
             </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>
-                Teacher PowerSchool Link
-              </Text>
-            </TouchableOpacity>
-			<TouchableOpacity onPress={this._handleHelpPress2} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>
-                Student & Parent PowerSchool Link
+			<Text>
+              <MonoText style={styles.infoText}>Helena, MT 59601</MonoText>
+            </Text>
+		  </View>
+		  
+		   <View style={styles.webContainer}>
+            <TouchableOpacity onPress={this._handleMainPress}>
+              <Text style={styles.webLinkText}>
+                 Main Office (406)324-2200
               </Text>
             </TouchableOpacity>
           </View>
-        </ScrollView>
+		  
+		  <View style={styles.webContainer}>
+            <TouchableOpacity onPress={this._handleAttendencePress}>
+              <Text style={styles.webLinkText}>
+                 Attendance (406)324-2211
+              </Text>
+            </TouchableOpacity>
+          </View>
+		  
+		   <View style={styles.webContainer}>
+            <TouchableOpacity onPress={this._handleHHSWebpagePress} style={styles.webLink}>
+              <Text style={styles.webLinkText}>
+                Webpage
+              </Text>
+            </TouchableOpacity>
+          </View>
 
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
-            Options:
+            Be Respectful     Be a Graduate
           </Text>
-
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          
-          </View>
         </View>
       </View>
     );
   }
-
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Buffys Page
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-          CS Rocks! {learnMoreButton}
-        </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
-      );
-    }
+  
+  _handleAttendencePress = () => {
+    Linking.openURL('tel:4063242211');
   }
   
- 
-
-  _handleLearnMorePress = () => {
-    Linking.openURL('http://hhs.helenaschools.org/teachers/busmith/');
+  _handleMainPress = () => {
+    Linking.openURL('tel:4063242200');
   }
 
-  _handleHelpPress = () => {
-    Linking.openURL('https://ps.helenaschools.org/teachers/pw.html');
-  }
-  
-   _handleHelpPress2 = () => {
-    Linking.openURL('https://ps.helenaschools.org/public/home.html');
+  _handleHHSWebpagePress = () => {
+    Linking.openURL('http://hhs.helenaschools.org');
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#CC00449B',
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 15,
-    textAlign: 'center',
-  },
-  contentContainer: {
-    paddingTop: 10,
+  mainContainer: {
+	flex: 1,
+    backgroundColor: '#999999',
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+	marginTop: 5,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#CC0033',
   },
   welcomeContainer: {
     alignItems: 'center',
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 10,
   },
   welcomeImage: {
-    width: 180,
-    height: 170,
-    marginTop: 2,
+    width: 300,
+    height: 115,
+    marginTop: 5,
   },
-  getStartedContainer: {
+  hhsInfoContainer: {
+	marginTop: 20,
+	marginBottom: 10,
     alignItems: 'center',
-    marginHorizontal: 50,
+    marginHorizontal: 30,
   },
-  homeScreenFilename: {
-    marginVertical: 5,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 23,
-    textAlign: 'center',
+ infoText: {
+	fontSize: 20,
+	fontWeight: '600',
   },
   tabBarInfoContainer: {
     position: 'absolute',
@@ -176,26 +136,25 @@ const styles = StyleSheet.create({
       },
     }),
     alignItems: 'center',
-    backgroundColor: '#cccccc',
+    backgroundColor: '#990033',
     paddingVertical: 10,
+	height: 55,
   },
   tabBarInfoText: {
     fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    textAlign: 'center',
+    color: '#dddddd',
+    textAlign: 'left',
+	fontWeight: '600',
   },
-  navigationFilename: {
-    marginTop: 3,
-  },
-  helpContainer: {
-    marginTop: 5,
+  webContainer: {
+    marginTop: 10,
+	marginBottom: 5,
     alignItems: 'center',
   },
-  helpLink: {
-    paddingVertical: 5,
-  },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+  webLinkText: {
+    fontSize: 22,
+    color: '#990033',
+	textDecorationLine: 'underline',
+	
   },
 });

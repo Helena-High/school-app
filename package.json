@@ -1,7 +1,7 @@
 {
-  "name": "first-project",
+  "name": "school-app-project",
   "version": "0.0.0",
-  "description": "Hello Exponent!",
+  "description": "Helena High School App",
   "author": null,
   "private": true,
   "main": "main.js",
@@ -10,7 +10,12 @@
     "@exponent/samples": "^1.0.2",
     "@exponent/vector-icons": "^1.0.1",
     "exponent": "^10.0.0",
+    "ionicons-npm": "^2.0.1",
     "react": "~15.3.2",
-    "react-native": "github:exponentjs/react-native#sdk-10.1.2"
+    "react-native": "github:exponentjs/react-native#sdk-10.1.2",
+    "react-native-file-opener": "^0.2.0",
+    "react-native-fs": "^2.0.1-rc.2",
+    "react-native-pdf-view": "^0.3.2",
+    "react-native-vector-icons": "^3.0.0"
   }
 }

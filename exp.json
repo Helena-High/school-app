@@ -1,0 +1,21 @@
+{
+  "name": "school-app",
+  "description": "Helena High School App",
+  "slug": "school-app",
+  "sdkVersion": "10.0.0",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "primaryColor": "#cccccc",
+  "iconUrl": "C:/school-app/assets/images/Logo.png",
+  "notification": {
+    "iconUrl": "C:/school-app/assets/images/Logo.png",
+    "color": "#000000"
+  },
+  "loading": {
+    "iconUrl": "C:/school-app/assets/images/Logo.png",
+    "hideExponentText": false
+  },
+  "packagerOpts": {
+    "assetExts": ["ttf"]
+  }
+}

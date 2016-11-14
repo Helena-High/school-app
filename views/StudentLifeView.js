@@ -8,7 +8,11 @@ import {
   Text,
   View,
 } from 'react-native';
-
+import {
+  Ionicons,
+  MaterialIcons,
+  FontAwesome,
+} from '@exponent/vector-icons';
 
 export default class StudentLifeView extends React.Component {
   render() {
@@ -16,11 +20,11 @@ export default class StudentLifeView extends React.Component {
       <View style={styles.mainContainer}>
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleAnnouncementsPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			  <MaterialIcons
+					name={'announcement'}
+					size={23}
+					color={'#cccccc'}
+			  />
              <Text style={styles.label}>
                 Announcements
               </Text>
@@ -42,11 +46,11 @@ export default class StudentLifeView extends React.Component {
 	  
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleClubsPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			 <FontAwesome
+					name={'key'}
+					size={23}
+					color={'#cccccc'}
+			  />	
              <Text style={styles.label}>
                 Clubs & Activities
               </Text>
@@ -55,11 +59,11 @@ export default class StudentLifeView extends React.Component {
 		
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleStallStreetPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			 <FontAwesome
+					name={'newspaper-o'}
+					size={23}
+					color={'#cccccc'}
+			  />	
              <Text style={styles.label}>
                 Stall Street Journal
               </Text>
@@ -68,13 +72,13 @@ export default class StudentLifeView extends React.Component {
 		
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleSuggestMusicPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			  <Ionicons
+					name={'music-note'}
+					size={23}
+					color={'#cccccc'}
+			  />	
              <Text style={styles.label}>
-                Suggest Friday's Music
+                Friday's Music
               </Text>
             </TouchableOpacity>
 		</View>	
@@ -106,6 +110,7 @@ _handleClubsPress = () => {
 const styles = StyleSheet.create({
   mainContainer: {
 	flex: 1,
+	alignItems: 'center',
     backgroundColor: '#999999',
     paddingVertical: 25,
     paddingHorizontal: 5,
@@ -128,11 +133,12 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 10,
 	marginBottom: 10,
-    backgroundColor: '#990033'
+    backgroundColor: '#990033',
+	width: 280,
   },
   label: {
-    width: 230,
-	marginLeft: 5,
+    width: 200,
+	marginLeft: 10,
     alignSelf: 'flex-start',
     textAlign: 'left',
     fontSize: 20,

@@ -41,7 +41,7 @@ const Button = ({title, imageName, buttonColor, labelColor}) => {
   );
 };
 
-export default class HomeScreen extends React.Component {
+export default class SchoolDirectionsScreen extends React.Component {
   static route = {
     navigationBar: {
 			title: 'Directions',
@@ -137,17 +137,13 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
 	flex: 1,
+	alignItems: 'center',
     backgroundColor: '#999999',
     paddingVertical: 25,
     paddingHorizontal: 5,
 	marginBottom: 5,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#CC0033',
-  },
-  option: {
-    flexDirection: 'row',
-    paddingHorizontal: 15,
-    paddingVertical: 15,
   },
   button: {
 	flexDirection: 'row',
@@ -157,6 +153,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 10,
 	marginBottom: 10,
+	width: 280,
   },
   label: {
 	justifyContent: 'center', 

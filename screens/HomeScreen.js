@@ -43,29 +43,28 @@ export default class HomeScreen extends React.Component {
             </Text>
 		  </View>
 		  
-		   <View style={styles.webContainer}>
-            <TouchableOpacity onPress={this._handleMainPress}>
-              <Text style={styles.webLinkText}>
+		   
+            <TouchableOpacity onPress={this._handleMainPress} style={styles.button}>
+              <Text style={styles.label}>
                  Main Office (406)324-2200
               </Text>
             </TouchableOpacity>
-          </View>
+         
 		  
-		  <View style={styles.webContainer}>
-            <TouchableOpacity onPress={this._handleAttendencePress}>
-              <Text style={styles.webLinkText}>
+		  
+            <TouchableOpacity onPress={this._handleAttendencePress} style={styles.button}>
+              <Text style={styles.label}>
                  Attendance (406)324-2211
               </Text>
             </TouchableOpacity>
-          </View>
+        
 		  
-		   <View style={styles.webContainer}>
-            <TouchableOpacity onPress={this._handleHHSWebpagePress} style={styles.webLink}>
-              <Text style={styles.webLinkText}>
-                Webpage
-              </Text>
-            </TouchableOpacity>
-          </View>
+		<TouchableOpacity onPress={this._handleHHSWebpagePress} style={styles.button}>
+		  <Text style={styles.label}>
+			Helena High Webpage
+		  </Text>
+		</TouchableOpacity>
+         
 
         <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
@@ -92,6 +91,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   mainContainer: {
 	flex: 1,
+	alignItems: 'center',
     backgroundColor: '#999999',
     paddingVertical: 5,
     paddingHorizontal: 5,
@@ -101,8 +101,30 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     alignItems: 'center',
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  button: {
+	flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 5,
+    borderRadius: 5,
+    borderColor: '#cccccc',
+    padding: 5,
     marginTop: 10,
-    marginBottom: 10,
+	marginBottom: 10,
+    backgroundColor: '#990033',
+	width: 240,
+  },
+  label: {
+    width: 200,
+	marginLeft: 5,
+    alignSelf: 'flex-start',
+    textAlign: 'center',
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#dddddd'
   },
   welcomeImage: {
     width: 300,
@@ -110,7 +132,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   hhsInfoContainer: {
-	marginTop: 20,
+	marginTop: 5,
 	marginBottom: 10,
     alignItems: 'center',
     marginHorizontal: 30,
@@ -145,16 +167,5 @@ const styles = StyleSheet.create({
     color: '#dddddd',
     textAlign: 'left',
 	fontWeight: '600',
-  },
-  webContainer: {
-    marginTop: 10,
-	marginBottom: 5,
-    alignItems: 'center',
-  },
-  webLinkText: {
-    fontSize: 22,
-    color: '#990033',
-	textDecorationLine: 'underline',
-	
   },
 });

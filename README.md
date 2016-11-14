@@ -92,3 +92,11 @@ After you have pushed the change you would like to Pull Request:
 - It says something about my branch being behind? Type `git pull upstream master`
 
 If none of these applied ask for help.
+
+### Setting up Node
+
+Run `npm install -dd` from the home directory of the project
+
+## Code Reviewing
+
+Code reviewing is a good way to pre-emptivally catch errors as well as enforce the style guide. On any open pull request feel free to click on a line and made a comment, if you think something should be changed.

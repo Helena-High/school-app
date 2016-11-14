@@ -8,7 +8,10 @@ import {
   Text,
   View,
 } from 'react-native';
-
+import {
+  Ionicons,
+  MaterialIcons,
+} from '@exponent/vector-icons';
 
 export default class ParentStudentInfoView extends React.Component {
   render() {
@@ -16,11 +19,11 @@ export default class ParentStudentInfoView extends React.Component {
       <View style={styles.mainContainer}>
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleDueDatesPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			  <MaterialIcons
+					name={'date-range'}
+					size={23}
+					color={'#cccccc'}
+			  />
              <Text style={styles.label}>
                 Due Dates
               </Text>
@@ -29,11 +32,11 @@ export default class ParentStudentInfoView extends React.Component {
 		
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleGraduationPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			  <Ionicons
+					name={'university'}
+					size={23}
+					color={'#cccccc'}
+			  />
              <Text style={styles.label}>
                 Graduation
               </Text>
@@ -42,11 +45,11 @@ export default class ParentStudentInfoView extends React.Component {
 	  
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleSuicideAwarenessPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			 <Ionicons
+					name={'heart-broken'}
+					size={23}
+					color={'#cccccc'}
+			  />
              <Text style={styles.label}>
                 Suicide Awareness
               </Text>
@@ -55,11 +58,11 @@ export default class ParentStudentInfoView extends React.Component {
 		
 		<View style={styles.option}>
 			<TouchableOpacity onPress={this._handleTrafficEducationPress} style={styles.button}>
-			 <Image
-				source={require('../assets/images/BengalH.png')}
-				fadeDuration={0}
-				style={{width:25, height: 25}}
-			/>
+			  <Ionicons
+					name={'model-s'}
+					size={23}
+					color={'#cccccc'}
+			  />
              <Text style={styles.label}>
                 Traffic Education
               </Text>
@@ -89,6 +92,7 @@ _handleSuicideAwarenessPress = () => {
 const styles = StyleSheet.create({
   mainContainer: {
 	flex: 1,
+	alignItems: 'center',
     backgroundColor: '#999999',
     paddingVertical: 25,
     paddingHorizontal: 5,
@@ -100,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 15,
     paddingVertical: 15,
-  },
+  },  
   button: {
 	flexDirection: 'row',
     justifyContent: 'center',
@@ -111,10 +115,11 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 10,
 	marginBottom: 10,
-    backgroundColor: '#990033'
+    backgroundColor: '#990033',
+	width: 280,
   },
   label: {
-    width: 230,
+    width: 200,
 	marginLeft: 5,
     alignSelf: 'flex-start',
     textAlign: 'left',

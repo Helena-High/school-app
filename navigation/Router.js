@@ -13,6 +13,7 @@ import SchoolDirectionsScreen from '../screens/SchoolDirectionsScreen';
 import HHSMapScreen from '../screens/HHSMapScreen';
 import TwitterScreen from '../screens/TwitterScreen';
 import FacebookScreen from '../screens/FacebookScreen';
+import ScheduleScreen from '../screens/ScheduleScreen';
 import RootNavigation from './RootNavigation';
 
 export default createRouter(() => ({
@@ -27,5 +28,6 @@ export default createRouter(() => ({
   hhsmap: () => HHSMapScreen,
   twitter: () => TwitterScreen,
   facebook: () => FacebookScreen,
+  schedule: () => ScheduleScreen,
   rootNavigation: () => RootNavigation,
 }));

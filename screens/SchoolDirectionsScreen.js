@@ -15,9 +15,11 @@ import BigSky from '../assets/images/BigSky.png';
 import BillingsS from '../assets/images/BillingsS.png';
 import BillingsW from '../assets/images/BillingsW.png';
 import BozemanH from '../assets/images/BozemanH.png';
+import Butte from '../assets/images/Butte.png';
 import CapitalH from '../assets/images/CapitalH.png';
 import CMR from '../assets/images/CMR.png';
 import GlacierH from '../assets/images/GlacierH.png';
+import GreatFalls from '../assets/images/GreatFalls.png';
 import BengalH from '../assets/images/BengalH.png';
 import Hellgate from '../assets/images/Hellgate.png';
 import Flathead from '../assets/images/Flathead.png';
@@ -39,7 +41,7 @@ const Button = ({title, imageName, buttonColor, labelColor}) => {
   );
 };
 
-export default class HomeScreen extends React.Component {
+export default class SchoolDirectionsScreen extends React.Component {
   static route = {
     navigationBar: {
 			title: 'Directions',
@@ -78,6 +80,10 @@ export default class HomeScreen extends React.Component {
 			</TouchableOpacity>	
 			
 			<TouchableOpacity onPress={this.handleButtonPress}>
+				<Button title={"  Butte High School"} imageName={Butte} buttonColor={'#ADADAD'} labelColor={'#7250FF'}/>
+			</TouchableOpacity>	
+			
+			<TouchableOpacity onPress={this.handleButtonPress}>
 				<Button title={"  Capital High School"} imageName={CapitalH} buttonColor={'#F3BC23'} labelColor={'#472005'}/>
 			</TouchableOpacity>	
 			
@@ -87,6 +93,10 @@ export default class HomeScreen extends React.Component {
 			
 			<TouchableOpacity onPress={this.handleButtonPress}>
 				<Button title={"  Glacier High School"} imageName={GlacierH} buttonColor={'#2C489B'} labelColor={'#FFFFFF'}/>
+			</TouchableOpacity>
+			
+			<TouchableOpacity onPress={this.handleButtonPress}>
+				<Button title={"  Great Falls High School"} imageName={GreatFalls} buttonColor={'#FFFFFF'} labelColor={'#00009E'}/>
 			</TouchableOpacity>
 			
 			<TouchableOpacity onPress={this.handleButtonPress}>
@@ -127,17 +137,13 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
 	flex: 1,
+	alignItems: 'center',
     backgroundColor: '#999999',
     paddingVertical: 25,
     paddingHorizontal: 5,
 	marginBottom: 5,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#CC0033',
-  },
-  option: {
-    flexDirection: 'row',
-    paddingHorizontal: 15,
-    paddingVertical: 15,
   },
   button: {
 	flexDirection: 'row',
@@ -147,6 +153,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginTop: 10,
 	marginBottom: 10,
+	width: 280,
   },
   label: {
 	justifyContent: 'center', 

@@ -13,8 +13,6 @@ import {
 } from '@exponent/ex-navigation';
 import {
   FontAwesome,
-  Entypo,
-  MaterialIcons,
 } from '@exponent/vector-icons';
 
 import Alerts from '../constants/Alerts';
@@ -41,16 +39,10 @@ export default class RootNavigation extends React.Component {
           renderIcon={isSelected => this._renderFontAwesomeIcon('home', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('home')} />
         </TabNavigationItem>
-		
-		<TabNavigationItem
-          id="powerschool"
-          renderIcon={isSelected => this._renderMaterialIconsIcon('spellcheck', isSelected)}>
-          <StackNavigation initialRoute={Router.getRoute('powerschool')} />
-        </TabNavigationItem>
 
         <TabNavigationItem
           id="info"
-          renderIcon={isSelected => this._renderEntypoIcon('info-with-circle', isSelected)}>
+          renderIcon={isSelected => this._renderFontAwesomeIcon('info', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('info')} />
         </TabNavigationItem> 
 
@@ -58,7 +50,14 @@ export default class RootNavigation extends React.Component {
           id="athletics"
           renderIcon={isSelected => this._renderFontAwesomeIcon('paw', isSelected)}>
           <StackNavigation initialRoute={Router.getRoute('athletics')} />
-        </TabNavigationItem>     		
+        </TabNavigationItem>  
+
+		<TabNavigationItem
+          id="powerschool"
+          renderIcon={isSelected => this._renderFontAwesomeIcon('product-hunt', isSelected)}>
+          <StackNavigation initialRoute={Router.getRoute('powerschool')} />
+        </TabNavigationItem>
+   		
       </TabNavigation>
     );
   }
@@ -72,27 +71,6 @@ export default class RootNavigation extends React.Component {
       />
     );
   }
-  
-   _renderEntypoIcon(name, isSelected) {
-    return (
-      <Entypo
-        name={name}
-        size={32}
-        color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
-      />
-    );
-  }
-  
-    _renderMaterialIconsIcon(name, isSelected) {
-    return (
-      <MaterialIcons
-        name={name}
-        size={32}
-        color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
-      />
-    );
-  }
-
 
   _registerForPushNotifications() {
     const { notification } = this.props;

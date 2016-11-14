@@ -86,6 +86,7 @@ export default class PowerSchoolView extends React.Component {
 const styles = StyleSheet.create({	
   mainContainer: {
 	flex: 1,
+	alignItems: 'center',
     backgroundColor: '#999999',
     paddingVertical: 25,
     paddingHorizontal: 5,
@@ -108,7 +109,8 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 10,
 	marginBottom: 10,
-    backgroundColor: '#990033'
+    backgroundColor: '#990033',
+	width: 280,
   },
   label: {
     width: 230,
